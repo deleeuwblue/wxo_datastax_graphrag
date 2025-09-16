@@ -16,7 +16,7 @@
 	},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	"forwardPorts": [3000, 3010],
+	"forwardPorts": [3000, 3010, 4001, 4025, 4321, 4322],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": "scripts/create_adk.sh"

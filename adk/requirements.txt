@@ -1,4 +1,4 @@
-ibm-watsonx-orchestrate
+ibm-watsonx-orchestrate==1.12.0b0
 dotenv
 pandas
 langchain_ibm

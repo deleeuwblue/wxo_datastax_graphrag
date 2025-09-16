@@ -1,0 +1,17 @@
+spec_version: v1
+kind: native
+name: movie_reviews
+display_name: Movie Reviews
+description: Answers questions about movies based on their reviews
+llm: watsonx/meta-llama/llama-3-2-90b-vision-instruct
+#llm: watsonx/openai/gpt-oss-120b 
+#llm: watsonx/ibm/granite-3-3-8b-instruct 
+style: default
+instructions: |-
+  You are a movie advisor.  Answer the question from the user
+
+  Your response should be based on information retrieved from the 'MovieReviewRAG' tool
+collaborators: []
+tools:
+  - MovieReviewRAG
+knowledge_base: []
