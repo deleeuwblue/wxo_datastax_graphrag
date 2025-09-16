@@ -1,0 +1,9 @@
+**/.DS_Store
+**/.env
+**/venv
+**/__pycache__/
+*.code-workspace
+useCase/*
+**/adk/venv
+**/adk/.env
+data/rotten_tomatoes_*.csv

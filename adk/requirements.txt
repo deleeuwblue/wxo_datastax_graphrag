@@ -1,0 +1,6 @@
+ibm-watsonx-orchestrate
+dotenv
+pandas
+langchain_ibm
+langchain-graph-retriever
+langchain-astradb
