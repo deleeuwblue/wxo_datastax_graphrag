@@ -21,12 +21,14 @@ from langchain_graph_retriever import GraphRetriever
 )
 def movie_review_rag(question:str) -> str:
     """
-    Retrieve data for answer to question using RAG
+    Retrieve data for answer to question using RAG.
     
     Args:
-        question (str): The question to find answers for
+        question (str): The question to find answers for.
+
     Returns:
-        str: The candidate data for the answer
+        str: The candidate data for the answer.
+
     """
 
     astraDB_conn = connections.key_value("astraDB")
@@ -41,9 +43,7 @@ def movie_review_rag(question:str) -> str:
         model_id="ibm/slate-125m-english-rtrvr",
         url="https://us-south.ml.cloud.ibm.com",
         apikey=WATSONX_APIKEY,
-        project_id=WATSONX_PROJECT_ID,
-        api_endpoint=ASTRA_DB_API_ENDPOINT,
-        token=ASTRA_DB_APPLICATION_TOKEN
+        project_id=WATSONX_PROJECT_ID
     )
 
     COLLECTION = "movie_reviews_rotten_tomatoes"
@@ -51,6 +51,8 @@ def movie_review_rag(question:str) -> str:
         embedding=embeddings,
         collection_name=COLLECTION,
         pre_delete_collection=False,
+        api_endpoint=ASTRA_DB_API_ENDPOINT,
+        token=ASTRA_DB_APPLICATION_TOKEN
     )
     
     retriever = GraphRetriever(
