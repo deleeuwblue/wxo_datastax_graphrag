@@ -1,7 +1,7 @@
 {
-	"name": "Docker in Docker",
+	"name": "IBM watsonx Orchestrate ADK",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/base:bullseye",
+	"image": "mcr.microsoft.com/devcontainers/base:bookworm",
 
 	"features": {
 		"ghcr.io/devcontainers/features/docker-in-docker:2": {
@@ -14,12 +14,24 @@
 			"version": "3.12"
 		}
 	},
+	
+	"overrideFeatureInstallOrder": [    
+			"ghcr.io/devcontainers/features/python",
+			"ghcr.io/devcontainers/features/docker-in-docker"
+	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	"forwardPorts": [3000, 3010, 4001, 4025, 4321, 4322],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "scripts/create_adk.sh"
+	"postCreateCommand": "scripts/create_adk.sh",
+  
+	"remoteEnv": {
+    "PODMAN_USERNS": "keep-id"
+  },
+  
+	"containerUser": "vscode"
+
 
 	// Configure tool-specific properties.
 	// "customizations": {},
